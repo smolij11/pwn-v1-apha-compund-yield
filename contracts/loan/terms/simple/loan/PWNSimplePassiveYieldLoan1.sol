@@ -14,6 +14,7 @@ import "contracts/loan/token/PWNLOAN.sol";
 import "contracts/loan/PWNVault.sol";
 import "contracts/PWNErrors.sol";
 import "contracts/CometMainInterface.sol";
+import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
 contract PWNSimplePassiveYieldLoan1 is
     PWNVault,
@@ -155,7 +156,19 @@ contract PWNSimplePassiveYieldLoan1 is
         });
 
         _permit(repayLoanAsset, msg.sender, loanAssetPermit);
+
         _pull(repayLoanAsset, msg.sender);
+
+        IERC20(loan.loanAssetAddress).approve(
+            compoundUSDC,
+            loan.loanRepayAmount
+        );
+
+        CometMainInterface(compoundUSDC).supplyTo(
+            loanToken.ownerOf(loanId),
+            loan.loanAssetAddress,
+            loan.loanRepayAmount
+        );
 
         _push(loan.collateral, loan.borrower);
 

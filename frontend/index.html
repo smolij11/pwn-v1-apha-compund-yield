@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+<head>
+<title>Compound Loan</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container-flex">
+        <button class="button" id="connectMetamask">Connect Metamask</button>
+        <div id="walletAddress"></div>
+    </div>
+    <div class="button-container">
+        <button class="button" onclick="getEth()">Get 1.0 ETH</button>
+        <button class="button" onclick="getUsdc()">Get 1mil USDC</button>
+    </div>
+    
+        <div class="balance" id="walletBalance"></div>
+        <div class="balance" id="walletUsdcBalance"></div>
+        <div class="balance" id="compoundBalance"></div>
+
+    
+    
+    <div class="compound-container">
+        <h3>Compound USDC (Lender)</h3>
+        <input type="text" id="depositInput" placeholder="">
+        <button id="depositButton" onclick="depositUsdc()">Deposit USDC</button>
+        <br>
+        <input type="text" id="withdrawInput" placeholder="">
+        <button id="withdrawButton" onclick="withdrawUsdc()">Withdraw USDC</button>
+        <br>
+        <button id="approveUsdcButton" onclick="approveUsdc()">Approve USDC to deposit</button>
+        <button id="allowLoanButton" onclick="allowPwn()">Allow PWN manage Compound</button>
+    </div>
+
+    <div class="nft-container">
+        <h3>NFT (Borrower)</h3>
+        <div class = "container-flex">
+            <button onclick="mintNFT()">Mint NFT</button>
+            <div id = "minted-nft"></div>
+        </div>
+        <br>
+        <button onclick="approveNFTs()">Approve PWN to manage all NFTs</button>
+    </div>
+
+        <div class="offer-container">
+            <h3>Make Offer (Lender)</h3>
+            <div class = "container-flex">
+                <div class = "offer-text">Collateral Address</div>
+                <input type="text" class = "offer-input" id="collateral-address" value="0x71B821aa52a49F32EEd535fCA6Eb5aa130085978">
+            </div>
+            <div class = "container-flex">
+                <div class = "offer-text">Collateral ID</div>
+                <input type="text" class = "offer-input" id="collateral-id">
+            </div>
+            <div class = "container-flex">
+                <div class = "offer-text">Loan Asset Address</div>
+                <input type="text" class = "offer-input" id="loan-asset-address" value="0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48">
+            </div>
+            <div class = "container-flex">
+                <div class = "offer-text">Loan Amount</div>
+                <input type="text" class = "offer-input" id="loan-amount">
+            </div>
+            <div class = "container-flex">
+                <div class = "offer-text">Loan Yield</div>
+                <input type="text" class = "offer-input" id="loan-yield">
+            </div>
+            <div class = "container-flex">
+                <div class = "offer-text">Duration (Days)</div>
+                <input type="text" class = "offer-input" id="duration">
+            </div>
+            <div class = "container-flex">
+                <div class = "offer-text">Borrower Address</div>
+                <input type="text" class = "offer-input" id="borrower-address">
+            </div>
+            <button onclick="signOffer()">Sign Offer</button>
+        </div>
+
+        <div class="offer-container">
+            <h3>Create & Repay Loan (Borrower)</h3>
+            <button onclick="createLoan()">Create Loan</button>
+            <br>
+            <button onclick="repayLoan()">Repay Loan</button>
+            <button onclick="approveUsdcRepay()">Approve USDC to repay loan</button>
+        </div>
+
+        <!-- <div class="offer-container">
+            <h3>Claim Loan (Lender)</h3>
+            <button onclick="claimLoan()">Claim Loan</button>
+        </div> -->
+</body>
+<script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js"
+        type="application/javascript"></script>
+
+<script src = "main.js" type="module"></script>
+
+</html>

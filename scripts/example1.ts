@@ -1,5 +1,7 @@
+// old and should no longer be working
+
 import { ethers } from "hardhat"
-import { BigNumber, ethers } from "ethers"
+import { BigNumber } from "ethers"
 import { simple } from "../typechain-types/contracts/loan/terms"
 import { abis } from "./abi"
 import { time } from "@nomicfoundation/hardhat-network-helpers";

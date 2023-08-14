@@ -1,0 +1,71 @@
+.button-container {
+  display: flex;
+}
+
+.container-flex {
+  display: flex;
+}
+
+#walletAddress {
+  margin-right: 5px;
+  margin-top: 10px;
+  margin-left: 5px;
+  font-size: 15px;
+  color:rgb(12, 115, 0);
+}
+
+.button {
+  /*padding: 10px 20px;*/
+  margin-right: 5px;
+  margin-top: 10px;
+  margin-left: 5px;
+  /*border: none;
+  background-color: #007bff;
+  color: white; 
+  cursor: pointer; */
+}
+
+.balance {
+  display: flex;
+  padding: 5px;
+  margin-left: 5px;
+  margin-top: 5px;
+  background-color: rgb(225, 228, 252);
+  width: 280px;
+  height: 25px;
+  align-items: center;
+}
+
+.compound-container{
+  margin-left: 5px;
+}
+
+.nft-container{
+  margin-left: 5px;
+  margin-top: 10px; 
+}
+
+#minted-nft{
+  margin-right: 5px;
+  margin-top: 5px;
+  margin-left: 5px;
+  font-size: 15px;
+  color:rgb(12, 115, 0);
+}
+
+.offer-container{
+  margin-left: 5px;
+  margin-top: 10px; 
+}
+
+.offer-text{
+  width: 150px;
+}
+
+.offer-input{
+  width: 320px;
+}
+
+#connectMetamask{
+  background-color: rgb(255, 204, 110);
+}
